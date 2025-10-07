@@ -58,7 +58,7 @@ release:
 
     Released by [GoReleaser](https://github.com/goreleaser/goreleaser).
 
-brews:
+homebrew_casks:
   - name: simplecli
     commit_author:
       name: goreleaserbot
