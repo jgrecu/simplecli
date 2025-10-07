@@ -31,8 +31,8 @@ archives:
     # this name template makes the OS and Arch compatible with the results of `uname`.
     name_template: >-
       {{ .ProjectName }}_
-      {{- if eq .Os "darwin"}}MacOS
-      {{ else }}{{ title .Os }}{{ end }}
+      {{- if eq .Os "darwin" }}MacOS_
+      {{- else }}{{ title .Os }}_{{ end }}
       {{- if eq .Arch "amd64" }}x86_64
       {{- else if eq .Arch "386" }}i386
       {{- else }}{{ .Arch }}{{ end }}
@@ -57,3 +57,16 @@ release:
     ---
 
     Released by [GoReleaser](https://github.com/goreleaser/goreleaser).
+
+brews:
+  - name: simplecli
+    commit_author:
+      name: goreleaserbot
+      email: bot@goreleaser.com
+    commit_msg_template: "Brew formula update for {{ .ProjectName }} version {{ .Tag }}"
+    homepage: "https://hithub.com/jgrecu"
+    description: "A simple CLI tool to test automated deployments"
+    license: "MIT"
+    repository:
+      owner: jgrecu
+      name: homebrew-simplecli
