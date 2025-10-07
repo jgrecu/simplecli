@@ -63,7 +63,7 @@ homebrew_casks:
       name: goreleaserbot
       email: bot@goreleaser.com
     commit_msg_template: "Brew formula update for {{ .ProjectName }} version {{ .Tag }}"
-    homepage: "https://hithub.com/jgrecu"
+    homepage: "https://github.com/jgrecu"
     description: "A simple CLI tool to test automated deployments"
     license: "MIT"
     repository:
