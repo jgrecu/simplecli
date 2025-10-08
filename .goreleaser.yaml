@@ -107,3 +107,22 @@ docker_manifests:
   image_templates:
   - ghcr.io/jgrecu/{{ .ProjectName }}:{{ .Version }}-amd64
   - ghcr.io/jgrecu/{{ .ProjectName }}:{{ .Version }}-arm64v8
+
+nfpms:
+  - id: simplecli
+    package_name: simplecli
+    formats:
+      - deb
+      - rpm
+      - archlinux
+    homepage: "https://github.com/jgrecu/simplecli"
+    maintainer: "Jeremy Grecu <jgrecu@gmail.com>"
+    description: >-
+      ---
+      Simple CLI app installer package.
+    license: MIT
+    bindir: /usr/bin
+
+sboms:
+  - artifacts: archive
+
