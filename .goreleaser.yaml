@@ -69,6 +69,12 @@ homebrew_casks:
     repository:
       owner: jgrecu
       name: homebrew-simplecli
+    hooks:
+      post:
+        install: |
+          if OS.mac?
+            system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/simplecli"]
+          end
 
 dockers:
 - image_templates: [ "ghcr.io/jgrecu/{{ .ProjectName }}:{{ .Version }}-amd64" ]
